@@ -55,11 +55,13 @@ function App() {
     controls.start('up');
   }, []);
 
-  const myRef = useRef(null)
+  const home = useRef(null)
+  const aboutMe = useRef(null)
+  const skillsDiv = useRef(null)
+  const projects = useRef(null)
 
-  const executeScroll = () => {
-    console.log(myRef.current)
-    myRef.current.scrollIntoView()
+  const executeScroll = (section) => {
+    section.current.scrollIntoView()
   }
 
 
@@ -68,22 +70,23 @@ function App() {
       <motion.div initial="hidden" animate="visible" variants={{hidden: { opacity: 0, y: -100 }, visible: { opacity: 1, y: 0 }}} transition={{ duration: 1 }} className='h-20 w-full border-b-1 border-gray-800 flex justify-between items-center fixed bg-black z-10'>
         <p className='text-[#FCDC4D] inter600 ml-10'>rusher</p>
         <div className='flex items-center text-white inter600 space-x-4 lg:space-x-8 mr-10 max-sm:hidden'>
-          <p className='relative hover:cursor-pointer w-fit block group'>Home
+          <p onClick={() => {executeScroll(home)}} className='relative hover:cursor-pointer w-fit block group'>Home
             <span className="absolute block h-[2px] bg-[#FCDC4D] w-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
           </p>
-          <p onClick={executeScroll} className='relative hover:cursor-pointer w-fit block group'>About Me
+          <p onClick={() => {executeScroll(aboutMe)}} className='relative hover:cursor-pointer w-fit block group'>About Me
             <span className="absolute block h-[2px] bg-[#FCDC4D] w-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
           </p>
-          <p className='relative hover:cursor-pointer w-fit block group'>Skills
+          <p onClick={() => {executeScroll(skillsDiv)}} className='relative hover:cursor-pointer w-fit block group'>Skills
             <span className="absolute block h-[2px] bg-[#FCDC4D] w-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
           </p>
-          <p className='relative hover:cursor-pointer w-fit block group'>Projects
+          <p onClick={() => {executeScroll(projects)}} className='relative hover:cursor-pointer w-fit block group'>Projects
             <span className="absolute block h-[2px] bg-[#FCDC4D] w-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
           </p>
         </div>
         <Menu/>
       </motion.div>
-      <div className='w-9/12 m-auto h-screen flex flex-col justify-center relative'>
+
+      <div ref={home} className='w-9/12 m-auto h-screen flex flex-col justify-center relative'>
         <motion.p initial="hidden" animate="visible" variants={{hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0 }}} transition={{ duration: 0.5 }} className='text-3xl inter600 text-[#FCDC4D]'>Hey there!, I'm-</motion.p>
         <motion.h1 initial="hidden" animate="visible" variants={{hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0 }}} transition={{ duration: 0.6 }} className='inter900 text-9xl text-white'>Rusher</motion.h1>
         <motion.div initial="hidden" animate="visible" variants={{hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0 }}} transition={{ duration: 0.7 }} className='inter600 flex text-3xl'>
@@ -104,11 +107,12 @@ function App() {
         </motion.div>
       </div>
       
-      <motion.div ref={myRef} id='about' initial="hidden" animate={controls} variants={fadeInUp} className='pt-[100px] w-9/12 m-auto'>
+      <motion.div ref={aboutMe} id='about' initial="hidden" animate={controls} variants={fadeInUp} className='pt-[100px] w-9/12 m-auto'>
         <h2 className='text-white inter600 text-4xl'>About Me</h2>
         <p className='text-white inter400 w-full mt-4'><span className='text-[#FCDC4D]'>Rusher</span> is my tag on the Internet, but my real name is Federico. I am a software developer, I'm 19 years old and i'm from Argentina and I love programming and constantly facing challenges. I started doing this when I was 14 and to this day I have never stopped doing what I started as a hobby.</p>
       </motion.div>
-      <motion.div initial="hidden" animate={controls} variants={fadeInUp} className='w-9/12 m-auto mt-32'>
+
+      <motion.div ref={skillsDiv} initial="hidden" animate={controls} variants={fadeInUp} className='pt-[100px] w-9/12 m-auto '>
         <h2 className='text-white inter600 text-4xl'>Skills</h2>
         <p className='text-white mt-4 inter400'>Proficient in web development, I excel in JavaScript, CSS, HTML, and React for dynamic and engaging user interfaces. On the backend, I leverage Node.js and work with databases like MySQL and MongoDB. Skilled in version control with Git, and experienced in efficient styling using Tailwind CSS. Additionally, I bring versatility with Python for various tasks, ensuring a comprehensive skill set across the full development stack.</p>
         <div className='flex flex-wrap justify-start mt-4'>
@@ -124,8 +128,9 @@ function App() {
         }
         </div>
       </motion.div>
-      <div className='w-9/12 m-auto mt-32'>
-        <h2 className='text-white inter600 text-4xl'>Projects</h2>
+
+      <div className='w-9/12 m-auto'>
+        <h2 ref={projects} className='text-white inter600 text-4xl pt-[100px]'>Projects</h2>
         <div className='mt-3'>
           <motion.div initial="hidden" animate={controls} variants={fadeInLeft} className='w-11/12 max-2xl:w-full h-full relative overflow-hidden border-2 border-[#1D1D1D] rounded-md flex'>
             <img className='w-[450px] h-[250px] max-xl:w-[400px] max-xl:h[200px] object-cover' src="https://user-images.githubusercontent.com/105472000/258630512-da38bd63-3b8b-446b-acf1-fe094c09d8ca.png" alt="" />
@@ -135,19 +140,19 @@ function App() {
               <div>
                 <p className='inter400 text-lg'>A website, based on r/place of Reddit. You can write what do you want on pixels, coded on <span className='text-[#FCDC4D] inter600'>HTML</span>, <span className='text-[#FCDC4D] inter600'>CSS</span> and <span className='text-[#FCDC4D] inter600'>Javascript</span>.</p>
                 <div className='flex mt-2 items-center'>
-                  <div className='flex items-center border-2 border-red-500 p-1 rounded-md h-[36px]'>
+                  <div className='flex items-center bg-red-700 p-1 rounded-md h-[36px]'>
                     <img className='w-[20px] ml-2' src="https://cdn-icons-png.flaticon.com/512/174/174854.png" alt="HTML"/>
-                    <p className='inter600 mr-1 ml-1'>HTML</p>
+                    <p className='inter600 text-sm mr-1 ml-1 pr-1'>HTML</p>
                   </div>
 
-                  <div className='flex items-center border-2 border-blue-500 p-1 rounded-md h-[36px] ml-2'>
+                  <div className='flex items-center bg-blue-500 p-1 rounded-md h-[36px] ml-2'>
                     <img className='w-[20px] ml-2' src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/121-css3-512.png" alt="CSS"/>
-                    <p className='inter600 mr-1 ml-1'>CSS</p>
+                    <p className='inter600 text-sm mr-1 ml-1 pr-1'>CSS</p>
                   </div>
 
-                  <div className='flex items-center border-2 border-yellow-500 p-1 rounded-md h-[36px] ml-2'>
+                  <div className='flex items-center bg-yellow-500 p-1 rounded-md h-[36px] ml-2'>
                     <img className='w-[20px] ml-2' src="https://camo.githubusercontent.com/7a2b6137fa6818b1c85f86347a6b4a75ee52681d4a190c506df972e3c5459980/68747470733a2f2f70726f66696c696e61746f722e7269736861762e6465762f736b696c6c732d6173736574732f6a6176617363726970742d6f726967696e616c2e737667" alt="Javascript"/>
-                    <p className='inter600 mr-1 ml-1'>Javascript</p>
+                    <p className='inter600 text-sm mr-1 ml-1 pr-1'>Javascript</p>
                   </div>
                 </div>
               </div>
@@ -164,21 +169,21 @@ function App() {
             <div className='text-white flex flex-col justify-evenly w-full relative'>
               <h3 className='inter600 text-3xl'>Password Security</h3>
               <div>
-                <p className='inter400 text-lg'>A secure password generator and checker coded on <span className='text-[#FCDC4D] inter600'>HTML</span>, <span className='text-[#FCDC4D] inter600'>CSS</span> and <span className='text-[#FCDC4D] inter600'>Javascript</span>. This proyect is based on security points such as capital letters, numbers, extra characters.</p>
+                <p className='inter400 text-lg'>A website, based on r/place of Reddit. You can write what do you want on pixels, coded on <span className='text-[#FCDC4D] inter600'>HTML</span>, <span className='text-[#FCDC4D] inter600'>CSS</span> and <span className='text-[#FCDC4D] inter600'>Javascript</span>.</p>
                 <div className='flex mt-2 items-center'>
-                  <div className='flex items-center border-2 border-red-500 p-1 rounded-md h-[36px]'>
+                  <div className='flex items-center bg-red-700 p-1 rounded-md h-[36px]'>
                     <img className='w-[20px] ml-2' src="https://cdn-icons-png.flaticon.com/512/174/174854.png" alt="HTML"/>
-                    <p className='inter600 mr-1 ml-1'>HTML</p>
+                    <p className='inter600 text-sm mr-1 ml-1 pr-1'>HTML</p>
                   </div>
 
-                  <div className='flex items-center border-2 border-blue-500 p-1 rounded-md h-[36px] ml-2'>
+                  <div className='flex items-center bg-blue-500 p-1 rounded-md h-[36px] ml-2'>
                     <img className='w-[20px] ml-2' src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/121-css3-512.png" alt="CSS"/>
-                    <p className='inter600 mr-1 ml-1'>CSS</p>
+                    <p className='inter600 text-sm mr-1 ml-1 pr-1'>CSS</p>
                   </div>
 
-                  <div className='flex items-center border-2 border-yellow-500 p-1 rounded-md h-[36px] ml-2'>
+                  <div className='flex items-center bg-yellow-500 p-1 rounded-md h-[36px] ml-2'>
                     <img className='w-[20px] ml-2' src="https://camo.githubusercontent.com/7a2b6137fa6818b1c85f86347a6b4a75ee52681d4a190c506df972e3c5459980/68747470733a2f2f70726f66696c696e61746f722e7269736861762e6465762f736b696c6c732d6173736574732f6a6176617363726970742d6f726967696e616c2e737667" alt="Javascript"/>
-                    <p className='inter600 mr-1 ml-1'>Javascript</p>
+                    <p className='inter600 text-sm mr-1 ml-1 pr-1'>Javascript</p>
                   </div>
                 </div>
               </div>
@@ -195,24 +200,22 @@ function App() {
             <div className='text-white flex flex-col justify-evenly w-full relative'>
               <h3 className='inter600 text-3xl'>Dolar Now</h3>
               <div>
-                <p className='inter400 text-lg'>This is a website to check the dolar price on ARS <span className='text-[#FCDC4D] inter600'>HTML</span>, <span className='text-[#FCDC4D] inter600'>CSS</span> and <span className='text-[#FCDC4D] inter600'>Javascript</span> with Fetch API. In addition, it allows you to see the historical price.</p>
+                <p className='inter400 text-lg'>A website, based on r/place of Reddit. You can write what do you want on pixels, coded on <span className='text-[#FCDC4D] inter600'>HTML</span>, <span className='text-[#FCDC4D] inter600'>CSS</span> and <span className='text-[#FCDC4D] inter600'>Javascript</span>.</p>
                 <div className='flex mt-2 items-center'>
-
-                  <div className='flex items-center border-2 border-red-500 p-1 rounded-md h-[36px]'>
+                  <div className='flex items-center bg-red-700 p-1 rounded-md h-[36px]'>
                     <img className='w-[20px] ml-2' src="https://cdn-icons-png.flaticon.com/512/174/174854.png" alt="HTML"/>
-                    <p className='inter600 mr-1 ml-1'>HTML</p>
+                    <p className='inter600 text-sm mr-1 ml-1 pr-1'>HTML</p>
                   </div>
 
-                  <div className='flex items-center border-2 border-blue-500 p-1 rounded-md h-[36px] ml-2'>
+                  <div className='flex items-center bg-blue-500 p-1 rounded-md h-[36px] ml-2'>
                     <img className='w-[20px] ml-2' src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/121-css3-512.png" alt="CSS"/>
-                    <p className='inter600 mr-1 ml-1'>CSS</p>
+                    <p className='inter600 text-sm mr-1 ml-1 pr-1'>CSS</p>
                   </div>
 
-                  <div className='flex items-center border-2 border-yellow-500 p-1 rounded-md h-[36px] ml-2'>
+                  <div className='flex items-center bg-yellow-500 p-1 rounded-md h-[36px] ml-2'>
                     <img className='w-[20px] ml-2' src="https://camo.githubusercontent.com/7a2b6137fa6818b1c85f86347a6b4a75ee52681d4a190c506df972e3c5459980/68747470733a2f2f70726f66696c696e61746f722e7269736861762e6465762f736b696c6c732d6173736574732f6a6176617363726970742d6f726967696e616c2e737667" alt="Javascript"/>
-                    <p className='inter600 mr-1 ml-1'>Javascript</p>
+                    <p className='inter600 text-sm mr-1 ml-1 pr-1'>Javascript</p>
                   </div>
-
                 </div>
               </div>
               <div className='flex items-center'>
@@ -236,12 +239,12 @@ function App() {
                     <p className='inter600 mr-1 ml-1'>React</p>
                   </div>
 
-                  <div className='ml-2 flex items-center border-2 border-green-700 p-1 rounded-md h-[36px]'>
+                  <div className='ml-2 flex items-center bg-green-800 p-1 rounded-md h-[36px]'>
                     <img className='w-[20px] ml-2' src="https://static-00.iconduck.com/assets.00/node-js-icon-227x256-913nazt0.png" alt="NodeJS"/>
-                    <p className='inter600 mr-1 ml-1'>NodeJS</p>
+                    <p className='inter600 mr-1 ml-1 text-black'>NodeJS</p>
                   </div>
 
-                  <div className='ml-2 flex items-center border-[2px] border-white p-1 rounded-md'>
+                  <div className='ml-2 flex items-center p-1 rounded-md'>
                     <div className='w-[20px] border-[1px] flex items-center justify-center rounded-sm'><img className='w-[20px]' src="https://avatars.githubusercontent.com/u/86160567?s=200&v=4" alt="NextUI" /></div>
                     <p className='inter600 mr-1 ml-1'>NextUI</p>
                   </div>
@@ -263,7 +266,7 @@ function App() {
               </div>
             </div>
           </motion.div>
-
+          <a className='text-[#FCDC4D] inter400 text-right w-11/12 mt-2 hover:underline hover:cursor-pointer'>View more...</a>
 
         </div>
       </div>
