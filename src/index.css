@@ -8,6 +8,51 @@
   padding: 0px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scrollbar-color: #2c2c2c #000;
+  scrollbar-width: thin;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #2c2c2c;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+textarea {
+  scrollbar-color: #2c2c2c transparent;
+  scrollbar-width: thin;
+}
+
+textarea::-webkit-scrollbar {
+  width: 5px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #2c2c2c;
+  border-radius: 5px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+textarea:focus { 
+  outline: none !important;
+}
+
+
 .inter400{
   font-family: 'Inter';
   font-weight: 400;
@@ -21,8 +66,4 @@
 .inter900{
   font-family: 'Inter';
   font-weight: 900;
-}
-
-html {
-  scroll-behavior: smooth;
 }
