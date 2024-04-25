@@ -549,7 +549,7 @@ function App() {
                 </p>
                 <Button
                   onClick={() =>
-                    window.open("https://github.com/rusherdv", "_blank")
+                    window.open("https://github.com/rusherdv/discord-login-clon", "_blank")
                   }
                   className="rounded-md bg-[#1D1D1D] text-white inter600 mt-2"
                   startContent={
