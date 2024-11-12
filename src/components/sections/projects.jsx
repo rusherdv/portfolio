@@ -108,7 +108,7 @@ const ProjectsSection = () => {
                 : "hidden lg:block col-span-1 lg:h-[350px]"
             }`}
           >
-            <div className="absolute z-10 opacity-0 lg:group-hover:opacity-100 transition-all text-white lg:bottom-8 lg:left-8 max-lg:mt-4">
+            <div className="absolute hidden lg:block z-10 opacity-0 lg:group-hover:opacity-100 transition-all text-white lg:bottom-8 lg:left-8 max-lg:mt-4">
               <h3 className="text-3xl lg:text-4xl font-semibold ">
                 {project.name}
               </h3>
