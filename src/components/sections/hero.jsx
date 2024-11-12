@@ -45,6 +45,7 @@ const HeroSection = () => {
           </div>
         </div>
         <Image
+          alt="rusher"
           width={200}
           height={200}
           className="rounded-full animate-duration-1000 animate-slide-in-right opacity-90 z-50 hidden md:block"

@@ -45,6 +45,7 @@ const AboutSection = () => {
           <div className="flex gap-2 items-center text-white">
             <div className="bg-[#1D1D1D]/70 flex items-center justify-center rounded-sm w-16 h-16">
               <Image
+                alt="Youtube"
                 src="/icons/youtube.webp"
                 className="px-2"
                 width={150}
@@ -62,7 +63,12 @@ const AboutSection = () => {
           <div className="ml-[32px] w-[2px] bg-[#1D1D1D] h-[50px]" />
           <div className="flex gap-2 items-center text-white">
             <div className="bg-[#1D1D1D]/70 flex items-center justify-center rounded-sm w-16 h-16">
-              <Image src="/icons/udemy.png" width={150} height={150} />
+              <Image
+                alt="Udemy"
+                src="/icons/udemy.png"
+                width={150}
+                height={150}
+              />
             </div>
             <div className="flex flex-col w-fit">
               <p className="w-fit text-sm">Udemy</p>
@@ -78,6 +84,7 @@ const AboutSection = () => {
           <div className="flex gap-2 items-center text-white">
             <div className="bg-[#1D1D1D]/70 flex items-center justify-center rounded-sm w-16 h-16">
               <Image
+                alt="Youtube"
                 src="/icons/youtube.webp"
                 className="px-2"
                 width={150}

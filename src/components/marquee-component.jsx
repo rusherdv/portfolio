@@ -79,6 +79,7 @@ export function MarqueeDemo() {
             className="w-[90px] h-[90px] flex items-center justify-center"
           >
             <Image
+              alt={tech.name}
               src={tech.img}
               className="hover:scale-110 transition-all hover:cursor-pointer"
               width={50}
