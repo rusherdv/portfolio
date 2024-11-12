@@ -195,7 +195,7 @@ const ProjectsSection = () => {
                 fill
                 src={project.img}
                 alt={project.name}
-                className="w-full h-full object-cover rounded-md transition-all lg:group-hover:blur-sm lg:group-hover:opacity-40"
+                className="w-full h-full object-cover rounded-md transition-all hover:cursor-pointer lg:group-hover:opacity-20"
               />
             </div>
             <div className="lg:hidden mt-4 border-b-2 border-gray-800 pb-2">

@@ -14,7 +14,7 @@ const HeroSection = () => {
       <div className="container mx-auto xl:w-[1100px] flex items-center justify-between">
         <div className="animate-slide-in-left animate-duration-1000 max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
           <p className="text-2xl w-full md:text-left text-center font-semibold text-[#FCDC4D]">
-            Hey there!, I'm-
+            Hey there!, I&#39;m-
           </p>
           <h1 className="text-7xl w-full font-extrabold text-white md:text-left text-center max-sm:text-7xl">
             Rusher
