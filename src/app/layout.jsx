@@ -1,4 +1,5 @@
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -13,8 +14,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
       <body className="antialiased bg-background text-foreground">
-        {children}
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

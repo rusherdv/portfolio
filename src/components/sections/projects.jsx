@@ -88,7 +88,7 @@ const ProjectsSection = () => {
   return (
     <div
       id="projects"
-      className="w-10/12 container mx-auto xl:w-[1100px] scroll-mt-[100px] min-h-screen"
+      className="w-10/12 container mx-auto xl:w-[1100px] scroll-mt-[10px] min-h-screen"
     >
       <h2 className="text-white font-semibold text-4xl text-center">
         Projects
