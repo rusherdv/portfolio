@@ -20,7 +20,7 @@ const HeroSection = () => {
             Rusher
           </h2>
           <div className="flex text-2xl font-semibold max-md:mx-auto md:text-left text-center w-8/12 max-sm:w-10/12 max-sm:text-lg">
-            <h1 className="text-gray-500">
+            <h1 className="text-gray-400">
               <span className="text-white">Software Developer.</span> A
               self-taught programmer eager to work and learn more.
             </h1>

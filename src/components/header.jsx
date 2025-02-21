@@ -49,7 +49,7 @@ const Header = () => {
         <SheetTrigger className="sm:hidden block">
           <Menu width={30} height={30} className="text-white" />
         </SheetTrigger>
-        <SheetContent className="w-screen sm:max-w-[80vw] lg:max-w-[60vw] xl:max-w-[500px] bg-transparent backdrop-blur-lg border-black text-white">
+        <SheetContent className="w-screen sm:max-w-[80vw] lg:max-w-[60vw] xl:max-w-[500px] backdrop-blur-lg bg-black/20 border-black text-white">
           <SheetHeader>
             <SheetTitle className="text-2xl text-[#FCDC4D] text-left">
               rusher
