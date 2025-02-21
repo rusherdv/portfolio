@@ -119,7 +119,7 @@ const ContactForm = () => {
               height={16}
               src="/phone/iphoneIcons.webp"
               className="object-cover"
-              alt=""
+              alt="Icons"
             />
           </div>
           <div
@@ -143,7 +143,7 @@ const ContactForm = () => {
                   width={16}
                   height={16}
                   src="/phone/spotify.webp"
-                  alt=""
+                  alt="Spotify Quevedo"
                 />
                 <div className="spotifyContainer">
                   <div className="bar"></div>

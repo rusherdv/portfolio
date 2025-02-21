@@ -13,17 +13,17 @@ const HeroSection = () => {
       <ParticlesComponent />
       <div className="container mx-auto xl:w-[1100px] flex items-center justify-between">
         <div className="animate-slide-in-left animate-duration-1000 max-md:flex max-md:flex-col max-md:justify-center max-md:items-center">
-          <p className="text-2xl w-full md:text-left text-center font-semibold text-[#FCDC4D]">
+          <p className="text-3xl sm:-mb-8 w-full md:text-left text-center font-semibold text-[#FCDC4D]">
             Hey there!, I&#39;m-
           </p>
-          <h1 className="text-7xl w-full font-extrabold text-white md:text-left text-center max-sm:text-7xl">
+          <h2 className="text-[120px] sm:h-[150px] w-full font-extrabold text-white md:text-left text-center -ml-1 max-sm:text-7xl">
             Rusher
-          </h1>
-          <div className="flex text-xl font-semibold max-md:mx-auto md:text-left text-center w-8/12 max-sm:w-10/12 max-sm:text-lg">
-            <p className="text-gray-500">
+          </h2>
+          <div className="flex text-2xl font-semibold max-md:mx-auto md:text-left text-center w-8/12 max-sm:w-10/12 max-sm:text-lg">
+            <h1 className="text-gray-500">
               <span className="text-white">Software Developer.</span> A
               self-taught programmer eager to work and learn more.
-            </p>
+            </h1>
           </div>
           <div className="flex justify-between sm:w-[205px] gap-2 mt-2">
             <Link
@@ -45,7 +45,7 @@ const HeroSection = () => {
           </div>
         </div>
         <Image
-          alt="rusher"
+          alt="rusherdv_"
           width={200}
           height={200}
           className="rounded-full animate-duration-1000 animate-slide-in-right opacity-90 z-50 hidden md:block"
