@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
@@ -10,8 +11,38 @@ const ProjectsSection = () => {
       github: "",
       demo: "",
       live: "https://vbucks.ar/",
-      display: "3x1",
+      display: "3x2",
       technologies: ["NextJS", "MongoDB", "TailwindCSS", "shadcn", "Resend"],
+    },
+    {
+      img: "/projects/robux.ar.webp",
+      name: "robux.ar",
+      description: `Complete Web App with automated Robux instant delivery.`,
+      github: "",
+      demo: "",
+      live: "https://robux.ar/",
+      display: "3x2",
+      technologies: ["NextJS", "MongoDB", "Rest-API", "rbxcrate"],
+    },
+    {
+      img: "/projects/vip-gaming.net.webp",
+      name: "VIP Gaming",
+      description: `Complete Web E-Commerce with automated e-mail delivery.`,
+      github: "",
+      demo: "",
+      live: "https://vip-gaming.net",
+      display: "3x2",
+      technologies: ["NextJS", "MongoDB", "Rest-API", "Resend"],
+    },
+    {
+      img: "/projects/berlingonzalez.shop.webp",
+      name: "Berlin Gonzalez Shop",
+      description: `Store app with auth, delivery and dashboard.`,
+      github: "",
+      demo: "",
+      live: "https://berlingonzalez.shop",
+      display: "3x2",
+      technologies: ["NextJS", "MongoDB", "TailwindCSS", "shadcn"],
     },
     {
       img: "/projects/lpcgames.com.webp",
@@ -20,7 +51,7 @@ const ProjectsSection = () => {
       github: "",
       demo: "",
       live: "https://lpcgames.com",
-      display: "3x1",
+      display: "3x2",
       technologies: ["NextJS", "MongoDB", "TailwindCSS", "shadcn"],
     },
     {
@@ -105,6 +136,8 @@ const ProjectsSection = () => {
                 ? "lg:col-span-2 lg:h-[350px] lg:row-span-1"
                 : project.display === "3x1"
                 ? "lg:col-span-3 lg:row-span-1 lg:h-[450px]"
+                : project.display === "3x2"
+                ? "lg:col-span-3 lg:row-span-2 lg:h-[700px]"
                 : "hidden lg:block col-span-1 lg:h-[350px]"
             }`}
           >
@@ -173,17 +206,7 @@ const ProjectsSection = () => {
                     target="_blank"
                     className="rounded-sm font-semibold w-fit gap-2 flex items-center bg-transparent transition-all border hover:bg-[#FCDC4D] hover:text-black border-[#FCDC4D] text-white text-xs px-4 py-2"
                   >
-                    <svg
-                      width={20}
-                      height={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 640 512"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"
-                      />
-                    </svg>
+                    <ExternalLink className="w-5 h-5" />
                     View Live
                   </Link>
                 )}

@@ -4,6 +4,30 @@ import Image from "next/image";
 
 const songs = [
   {
+    name: "IGUALES",
+    artist: "Quevedo",
+    duration: 183,
+    image: "/phone/bn.webp",
+  },
+  {
+    name: "Gran Via",
+    artist: "Quevedo",
+    duration: 213,
+    image: "/phone/bn.webp",
+  },
+  {
+    name: "HALO",
+    artist: "Quevedo",
+    duration: 181,
+    image: "/phone/bn.webp",
+  },
+  {
+    name: "Buenas Noches",
+    artist: "Quevedo",
+    duration: 238,
+    image: "/phone/bn.webp",
+  },
+  {
     name: "Columbia",
     artist: "Quevedo",
     duration: 186,
