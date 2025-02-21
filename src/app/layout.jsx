@@ -4,10 +4,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 export const metadata = {
-  title:
-    "Rusher – Full Stack Developer & Software Engineer | Next.js, Node.js & Automation",
+  title: "Rusher – Full Stack Developer & Software Engineer",
   description:
-    "Full Stack Developer specializing in Next.js, Node.js, and software automation. Creator of high-performance web apps, e-commerce solutions, and custom bots. Explore my projects and let's build something great!",
+    "Full Stack Developer specializing in Next.js, Node.js, and software automation. Creator of high-performance web apps, e-commerce solutions, and custom bots.",
 };
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
@@ -26,11 +25,11 @@ export default function RootLayout({ children }) {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Rusher – Full Stack Developer & Software Engineer | Next.js, Node.js & Automation"
+          content="Rusher – Full Stack Developer & Software Engineer"
         />
         <meta
           property="og:description"
-          content="Full Stack Developer specializing in Next.js, Node.js, and software automation. Creator of high-performance web apps, e-commerce solutions, and custom bots. Explore my projects and let's build something great!"
+          content="Full Stack Developer specializing in Next.js, Node.js, and software automation. Creator of high-performance web apps, e-commerce solutions, and custom bots."
         />
         <meta
           property="og:image"
@@ -38,18 +37,18 @@ export default function RootLayout({ children }) {
         />
         <meta
           property="og:site_name"
-          content="Rusher – Full Stack Developer & Software Engineer | Next.js, Node.js & Automation"
+          content="Rusher – Full Stack Developer & Software Engineer"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="rusher.net.ar" />
         <meta property="twitter:url" content="https://www.rusher.net.ar" />
         <meta
           name="twitter:title"
-          content="Rusher – Full Stack Developer & Software Engineer | Next.js, Node.js & Automation"
+          content="Rusher – Full Stack Developer & Software Engineer"
         />
         <meta
           name="twitter:description"
-          content="Full Stack Developer specializing in Next.js, Node.js, and software automation. Creator of high-performance web apps, e-commerce solutions, and custom bots. Explore my projects and let's build something great!"
+          content="Full Stack Developer specializing in Next.js, Node.js, and software automation. Creator of high-performance web apps, e-commerce solutions, and custom bots."
         />
         <meta
           name="twitter:image"
