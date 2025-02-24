@@ -166,7 +166,7 @@ const ContactForm = () => {
               Cancel
             </p>
             <div className="flex items-center justify-between mt-4">
-              <h5 className="font-bold text-2xl">New message</h5>
+              <h5 className="font-bold text-2xl text-black">New message</h5>
               <div className="w-8 h-8 bg-blue-500 hover:cursor-pointer flex justify-center items-center rounded-full">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
