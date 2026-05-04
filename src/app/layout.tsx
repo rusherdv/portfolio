@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { headers } from "next/headers";
+import { detectPreferredLang } from "@/lib/lang";
 import "./globals.css";
 
 const archivoBlack = Archivo_Black({
@@ -90,14 +92,17 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const requestHeaders = await headers();
+  const initialLang = detectPreferredLang(requestHeaders.get("accept-language"));
+
   return (
     <html
-      lang="en"
+      lang={initialLang}
       className={`${archivoBlack.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
       <body suppressHydrationWarning>{children}</body>
