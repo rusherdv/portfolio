@@ -1,0 +1,337 @@
+---
+const BASE = "https://rusherdv.vercel.app";
+const title = "Rusher — Software Developer";
+const description =
+  "Software developer from Argentina. Co-founder & sole developer at Audens Solutions.";
+const accentColor = "oklch(0.82 0.09 145)";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="software developer, web development, Astro, Argentina, full-stack, automation, Audens Solutions, freelance developer"
+    />
+    <meta name="author" content="Rusher" />
+    <link rel="canonical" href={BASE} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={BASE} />
+    <meta property="og:site_name" content="Rusher Portfolio" />
+    <meta property="og:image" content={`${BASE}/images/og.webp`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${BASE}/images/og.webp`} />
+
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style define:vars={{ accentColor }}>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Space Grotesk", sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      @keyframes riseIn {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes pulseDot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.3;
+          transform: scale(0.7);
+        }
+      }
+      @keyframes blinkCaret {
+        0%,
+        49% {
+          opacity: 1;
+        }
+        50%,
+        100% {
+          opacity: 0;
+        }
+      }
+      .rise {
+        opacity: 0;
+        animation: riseIn 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+      }
+
+      .page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: oklch(0.165 0 0);
+        padding: clamp(28px, 8vw, 96px);
+        position: relative;
+      }
+
+      .topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px clamp(20px, 5vw, 44px);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+        z-index: 3;
+      }
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .status-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accentColor);
+        animation: pulseDot 2s ease-in-out infinite;
+      }
+
+      main {
+        width: 100%;
+        max-width: 640px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+      }
+
+      .meta {
+        animation-delay: 0.05s;
+        display: grid;
+        grid-template-columns: 84px 1fr;
+        gap: 4px 16px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 40px;
+      }
+      .meta-key {
+        color: rgba(255, 255, 255, 0.34);
+      }
+      .meta-val {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      h1 {
+        animation-delay: 0.15s;
+        font-weight: 500;
+        font-size: clamp(44px, 8vw, 72px);
+        line-height: 1;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.97);
+        letter-spacing: -0.03em;
+      }
+      .caret {
+        color: var(--accentColor);
+        animation: blinkCaret 1.1s step-end infinite;
+        font-weight: 400;
+      }
+
+      .tagline {
+        animation-delay: 0.28s;
+        font-size: clamp(18px, 2.4vw, 24px);
+        line-height: 1.45;
+        margin: 32px 0 0;
+        color: rgba(255, 255, 255, 0.82);
+        text-wrap: pretty;
+      }
+      .tagline strong {
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .cta {
+        animation-delay: 0.4s;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        align-self: flex-start;
+        margin-top: 26px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        color: var(--accentColor);
+        border-bottom: 1px solid var(--accentColor);
+        padding-bottom: 3px;
+        transition:
+          gap 0.2s ease,
+          opacity 0.2s ease;
+      }
+      .cta:hover {
+        gap: 14px;
+        opacity: 0.8;
+      }
+
+      .divider {
+        animation-delay: 0.5s;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 48px 0 22px;
+      }
+
+      .links {
+        animation-delay: 0.58s;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .icon-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 15px;
+        border-radius: 9px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.68);
+        transition:
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .icon-btn:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        color: rgba(255, 255, 255, 0.95);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <span class="status">
+        <span class="status-dot"></span>
+        available for work
+      </span>
+      <span id="clock" aria-hidden="true"></span>
+    </div>
+
+    <div class="page">
+      <main>
+        <div class="meta rise">
+          <span class="meta-key">role</span>
+          <span class="meta-val">Full-stack developer</span>
+          <span class="meta-key">exp</span>
+          <span class="meta-val">3+ years</span>
+          <span class="meta-key">study</span>
+          <span class="meta-val">Computer Science</span>
+        </div>
+
+        <h1 class="rise">rusherdv<span class="caret">_</span></h1>
+
+        <p class="tagline rise">
+          Co-founder &amp; sole developer at <strong>Audens Solutions</strong> — where all the work lives.
+        </p>
+
+        <a class="cta rise" href="https://audens.solutions" target="_blank" rel="noopener">
+          See Audens Solutions
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <div class="divider rise"></div>
+
+        <div class="links rise">
+          <a
+            class="icon-btn"
+            href="https://discord.com/users/rusherdv_"
+            target="_blank"
+            rel="noopener"
+            title="Discord: rusherdv_"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+              ><path
+                d="M19.54 5.34A16.1 16.1 0 0 0 15.6 4.1l-.2.4a11.9 11.9 0 0 1 3.5 1.8 12.9 12.9 0 0 0-11-.02 12 12 0 0 1 3.5-1.78l-.2-.4a16 16 0 0 0-3.95 1.24A16.7 16.7 0 0 0 1.9 16.9a16.2 16.2 0 0 0 4.9 2.48l.6-1.02a10.6 10.6 0 0 1-1.86-.9l.46-.35a11.5 11.5 0 0 0 9.98 0l.46.35c-.58.35-1.2.65-1.86.9l.6 1.02a16.1 16.1 0 0 0 4.9-2.48 16.6 16.6 0 0 0-2.94-11.55zM8.9 14.3c-.94 0-1.72-.87-1.72-1.94s.76-1.94 1.72-1.94 1.74.88 1.72 1.94c0 1.07-.77 1.94-1.72 1.94zm6.2 0c-.95 0-1.72-.87-1.72-1.94s.76-1.94 1.72-1.94 1.73.88 1.72 1.94c0 1.07-.76 1.94-1.72 1.94z"
+              ></path></svg
+            >
+            <span>rusherdv_</span>
+          </a>
+          <a class="icon-btn" href="mailto:development093@gmail.com" title="development093@gmail.com">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="m3 7 9 6 9-6"></path>
+            </svg>
+            <span>Email</span>
+          </a>
+          <a class="icon-btn" href="https://github.com/rusherdv" target="_blank" rel="noopener" title="GitHub: rusherdv">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+              ><path
+                d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49l-.01-1.9c-2.78.62-3.37-1.22-3.37-1.22-.46-1.18-1.11-1.5-1.11-1.5-.9-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"
+              ></path></svg
+            >
+            <span>GitHub</span>
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const clockEl = document.getElementById("clock")!;
+      const tick = () => {
+        clockEl.textContent = new Date().toLocaleTimeString("en-GB", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        });
+      };
+      tick();
+      setInterval(tick, 1000);
+    </script>
+  </body>
+</html>
