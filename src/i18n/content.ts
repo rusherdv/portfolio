@@ -1,7 +1,7 @@
 export const locales = ["en", "es"] as const;
 export type Locale = (typeof locales)[number];
 
-export const BASE = "https://rusherdv.vercel.app";
+export const BASE = "https://rusher.cloud";
 
 export const paths: Record<Locale, string> = {
   en: "/",

@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import vercel from "@astrojs/vercel";
 
 export default defineConfig({
-  site: "https://rusherdv.vercel.app",
+  site: "https://rusher.cloud",
   compressHTML: true,
   adapter: vercel({ middlewareMode: "edge" }),
   build: {
