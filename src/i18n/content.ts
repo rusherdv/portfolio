@@ -38,7 +38,7 @@ export const content: Record<Locale, LocaleContent> = {
     ogLocale: "en_US",
     title: "Rusher — Software Developer",
     description:
-      "Software developer from Argentina. Co-founder & sole developer at Audens Solutions.",
+      "Software developer from Argentina, studying Computer Science. Co-founder & head of development at Audens Solutions.",
     keywords:
       "software developer, web development, Astro, Argentina, full-stack, automation, Audens Solutions, freelance developer",
     available: "available for work",
@@ -48,9 +48,9 @@ export const content: Record<Locale, LocaleContent> = {
     role: "Full-stack developer",
     exp: "3+ years",
     study: "Computer Science",
-    taglinePre: "Co-founder & sole developer at ",
-    companyName: "Audens Solutions",
-    taglinePost: " — where all the work lives.",
+    taglinePre: "Software developer from Argentina, studying Computer Science. Co-founder & head of development at ",
+    companyName: "Audens Solutions",
+    taglinePost: ".",
     ctaText: "See Audens Solutions",
     discordLabel: "rusherdv_",
     emailLabel: "Email",
@@ -63,7 +63,7 @@ export const content: Record<Locale, LocaleContent> = {
     ogLocale: "es_AR",
     title: "Rusher — Desarrollador de Software",
     description:
-      "Desarrollador de software de Argentina. Co-fundador y único desarrollador en Audens Solutions.",
+      "Desarrollador de software en Argentina, estudiando Ciencias de la Computación. Co-fundador y jefe de desarrollo en Audens Solutions.",
     keywords:
       "desarrollador de software, desarrollo web, Astro, Argentina, full-stack, automatización, Audens Solutions, desarrollador freelance",
     available: "disponible para trabajar",
@@ -73,9 +73,9 @@ export const content: Record<Locale, LocaleContent> = {
     role: "Desarrollador Full-stack",
     exp: "3+ años",
     study: "Ciencias de la Computación",
-    taglinePre: "Co-fundador y único desarrollador en ",
-    companyName: "Audens Solutions",
-    taglinePost: " — ahí vive todo el trabajo.",
+    taglinePre: "Desarrollador de software en Argentina, estudiando Ciencias de la Computación. Co-fundador y jefe de desarrollo en ",
+    companyName: "Audens Solutions",
+    taglinePost: ".",
     ctaText: "Ver Audens Solutions",
     discordLabel: "rusherdv_",
     emailLabel: "Email",
