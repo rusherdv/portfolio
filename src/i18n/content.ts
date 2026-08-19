@@ -81,6 +81,6 @@ export const content: Record<Locale, LocaleContent> = {
     emailLabel: "Email",
     githubLabel: "GitHub",
     switchLabel: "EN",
-    switchHref: "/?lang=en",
+    switchHref: "/",
   },
 };
