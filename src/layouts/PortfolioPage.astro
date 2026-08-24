@@ -12,6 +12,15 @@ const otherLocale: Locale = locale === "en" ? "es" : "en";
 const canonical = `${BASE}${paths[locale]}`;
 const accentColor = "oklch(0.82 0.09 145)";
 
+const projects = [
+  { name: "CobrandoApp", url: "https://cobrando.app" },
+  { name: "Audens Solutions", url: "https://audens.ar" },
+  { name: "Taller Cabana", url: "https://tallercabana.com" },
+].map((p) => ({
+  ...p,
+  image: `https://api.microlink.io/?url=${encodeURIComponent(p.url)}&screenshot=true&meta=false&embed=screenshot.url`,
+}));
+
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -276,8 +285,56 @@ const personSchema = {
         margin: 48px 0 22px;
       }
 
-      .links {
+      .projects {
         animation-delay: 0.58s;
+      }
+      .projects-label {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        color: rgba(255, 255, 255, 0.34);
+        margin-bottom: 12px;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .project-card {
+        display: block;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .project-card:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+      .project-thumb {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        object-position: top;
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .project-name {
+        display: block;
+        padding: 8px 10px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.68);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .links {
+        animation-delay: 0.68s;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
@@ -299,6 +356,12 @@ const personSchema = {
       .icon-btn:hover {
         border-color: rgba(255, 255, 255, 0.3);
         color: rgba(255, 255, 255, 0.95);
+      }
+
+      @media (max-width: 480px) {
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -335,6 +398,22 @@ const personSchema = {
           {t.ctaText}
           <span aria-hidden="true">→</span>
         </a>
+
+        <div class="divider rise"></div>
+
+        <div class="projects rise">
+          <span class="projects-label">{t.projectsLabel}</span>
+          <div class="projects-grid">
+            {
+              projects.map((p) => (
+                <a class="project-card" href={p.url} target="_blank" rel="noopener" title={p.name}>
+                  <img class="project-thumb" src={p.image} alt={p.name} loading="lazy" />
+                  <span class="project-name">{p.name}</span>
+                </a>
+              ))
+            }
+          </div>
+        </div>
 
         <div class="divider rise"></div>
 

@@ -29,6 +29,7 @@ interface LocaleContent {
   telegramLabel: string;
   emailLabel: string;
   githubLabel: string;
+  projectsLabel: string;
   switchLabel: string;
   switchHref: string;
 }
@@ -57,6 +58,7 @@ export const content: Record<Locale, LocaleContent> = {
     telegramLabel: "@rusherdv",
     emailLabel: "Email",
     githubLabel: "GitHub",
+    projectsLabel: "projects",
     switchLabel: "ES",
     switchHref: "/es/",
   },
@@ -83,6 +85,7 @@ export const content: Record<Locale, LocaleContent> = {
     telegramLabel: "@rusherdv",
     emailLabel: "Email",
     githubLabel: "GitHub",
+    projectsLabel: "proyectos",
     switchLabel: "EN",
     switchHref: "/",
   },
