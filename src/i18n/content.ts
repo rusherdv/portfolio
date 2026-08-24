@@ -26,6 +26,7 @@ interface LocaleContent {
   taglinePost: string;
   ctaText: string;
   discordLabel: string;
+  telegramLabel: string;
   emailLabel: string;
   githubLabel: string;
   switchLabel: string;
@@ -53,6 +54,7 @@ export const content: Record<Locale, LocaleContent> = {
     taglinePost: ".",
     ctaText: "See Audens Solutions",
     discordLabel: "rusherdv_",
+    telegramLabel: "@rusherdv",
     emailLabel: "Email",
     githubLabel: "GitHub",
     switchLabel: "ES",
@@ -78,6 +80,7 @@ export const content: Record<Locale, LocaleContent> = {
     taglinePost: ".",
     ctaText: "Ver Audens Solutions",
     discordLabel: "rusherdv_",
+    telegramLabel: "@rusherdv",
     emailLabel: "Email",
     githubLabel: "GitHub",
     switchLabel: "EN",
