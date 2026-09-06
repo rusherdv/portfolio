@@ -1,10 +1,10 @@
 import { defineConfig } from "astro/config";
-import vercel from "@astrojs/vercel";
+import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
   site: "https://rusher.cloud",
   compressHTML: true,
-  adapter: vercel({ middlewareMode: "edge" }),
+  adapter: cloudflare(),
   build: {
     inlineStylesheets: "always",
   },
